@@ -1,0 +1,33 @@
+import { useEffect, useState } from 'react';
+import s from './products.module.scss';
+import { Col, Row } from 'antd';
+import ProductCard from '../../components/product/ProductCard';
+
+const Products = () => {
+	const [products, setProducts] = useState([]) as any;
+
+	useEffect(() => {
+		fetch('https://fakestoreapi.com/products')
+			.then(res=> res.json())
+			.then(json=> setProducts(json))
+	}, []);
+
+	return (
+    <div className="container-content">
+      <div className={s['products-page']}>
+				<div className={s['page-title']}>
+					<h1>PRODUCTS</h1>
+				</div>
+				<Row>
+        {products && products.map((product: any) => (
+					<Col md={6} xs={12}>
+						<ProductCard product={product} />
+					</Col>
+				))}
+				</Row>
+      </div>
+    </div>
+  );
+}
+
+export default Products;

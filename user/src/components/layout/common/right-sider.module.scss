@@ -1,0 +1,6 @@
+@import '../../../styles/default.scss';
+
+#right-sider-container {
+  min-height: calc(100vh - 200px);
+  background-color: $secondary-color;
+}

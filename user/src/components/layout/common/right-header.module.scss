@@ -1,0 +1,98 @@
+@import '../../../styles/default.scss';
+
+.box-right-header {
+  width: 100%;
+  ul {
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    justify-content: end;
+    align-items: center;
+    margin-block-end: 0;
+    margin-block-start: 0;
+  }
+
+  ul>li {
+    height: 100%;
+    line-height: 60px;
+    list-style: none;
+    margin: 0 10px;
+    position: relative;
+    background: $primary-color;
+  }
+
+  ul>li::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 5px;
+    left: 50%;
+    bottom: 0px;
+    background-color: $secondary-color;
+    background: $secondary-color;
+    transition: all 0.4s ease-in;
+  }
+
+  ul>li:hover::after {
+    left: 0px;
+    width: 100%;
+  }
+
+  ul>li:hover {
+    a {
+      color: $secondary-color;
+    }
+
+    ul {
+      display: block;
+      li {
+        margin: 0;
+        padding: 0 10px;
+        a {
+          color: $default-text-color;
+        }
+      }
+    }
+  }
+
+  ul>li>a {
+    color: $default-text-color;
+    font-size: 20px;
+  }
+
+  ul>li>ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+  }
+
+  ul>li>ul>li {
+    text-align: left;
+    min-width: 150px;
+    max-width: 200px;
+  }
+
+  ul>li>ul>li:hover {
+    a {
+      color: $secondary-color;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .box-right-header {
+    .hidden-on-mobile {
+      display: none;
+    }
+
+    .menu-icon {
+      display: block;
+      color: $default-text-color;
+    }
+  }
+}
