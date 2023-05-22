@@ -37,6 +37,26 @@ const nextConfig = {
         source: '/',
         destination: '/Home'
       },
+      {
+        source: '/introduce',
+        destination: '/Introduce'
+      },
+      {
+        source: '/procedure',
+        destination: '/Procedure'
+      },
+      {
+        source: '/project',
+        destination: '/Project'
+      },
+      {
+        source: '/products',
+        destination: '/Products'
+      },
+      {
+        source: '/contact',
+        destination: '/Contact'
+      },
     ];
   }
 };
