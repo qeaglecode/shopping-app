@@ -4,6 +4,7 @@ import {
   TwitterOutlined,
   InstagramOutlined
 } from '@ant-design/icons';
+import logo from '../../../assets/images/ts_house.png';
 import s from './footer.module.scss';
 
 const Footer = () => {
@@ -12,7 +13,11 @@ const Footer = () => {
       <ul className={s['social-contacts']}>
         <div className={s['section-logo']}>
           <a href='/'>
-            <img src="https://goldidea.vn/upload/nike.png" alt='logo' width={100} height={100} />
+            <img
+              src={logo}
+              alt='logo'
+              className={s['logo']}
+            />
           </a>
           {' '}
           <span className={s['company-name']}>T'S HOUSE</span>
