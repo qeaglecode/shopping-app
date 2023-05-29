@@ -5,10 +5,8 @@ import { AppService } from './app.service';
 import { AuthController } from './auth/controllers/auth.controller';
 import { AuthService } from './auth/services/auth.service';
 import { MongoDBModule } from './kernel/infras/mongodb';
-// import { AuthModule } from './auth/auth.module';
-// import { MongooseModule } from '@nestjs/mongoose';
 import { BookModule } from './book/book.module';
-import { SocketModule } from './socket/socket.module';
+import { SocketModule } from './modules/socket/socket.module';
 
 @Module({
   imports: [
@@ -17,8 +15,6 @@ import { SocketModule } from './socket/socket.module';
       isGlobal: true,
     }),
     MongoDBModule,
-    // MongooseModule.forRoot(process.env.DB_URL),
-    // AuthModule,
     BookModule,
     SocketModule,
   ],
