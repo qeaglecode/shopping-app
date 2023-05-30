@@ -20,8 +20,6 @@ export class BookService {
       this.bookModel.countDocuments(),
     ]);
 
-    console.log('books', books);
-
     return {
       data: books.map((item) => new BookDto(item)),
       total,

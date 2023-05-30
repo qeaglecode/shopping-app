@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import s from './home.module.scss';
+import { productService } from '../../services/product.service';
 
 const HomePage = () => {
   const [avatar, setAvatar] = useState() as any;
@@ -19,6 +20,13 @@ const HomePage = () => {
 
     setAvatar(file);
   }
+
+  useEffect(() => {
+    const getBooks = async () => {
+      const res = await productService.getProducts();
+    }
+    getBooks();
+  }, []);
 
   return (
     <div className="container-content">

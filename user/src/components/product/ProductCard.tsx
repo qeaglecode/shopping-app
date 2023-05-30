@@ -7,8 +7,6 @@ interface Props {
 }
 
 const ProductCard = ({ product }: Props) => {
-	console.log('product', product);
-	
 	return (
 		<div className={s['product-card']}>
 

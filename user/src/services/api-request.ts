@@ -68,7 +68,8 @@ export abstract class APIRequest {
     const { API_ENDPOINT } = APIRequest;
     if (API_ENDPOINT) return API_ENDPOINT;
 
-    const { publicRuntimeConfig } = getConfig();
+    const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+    
     return publicRuntimeConfig.API_ENDPOINT;
   }
 

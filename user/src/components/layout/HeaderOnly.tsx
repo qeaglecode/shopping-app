@@ -5,7 +5,7 @@ const HeaderOnly = ({ children }: any) => {
     <div>
       <Header />
       <div className="container">
-        <div className="content">
+        <div className="content" style={{ background: 'red', color: 'red' }}>
           {children}
         </div>
       </div>

@@ -1,9 +1,10 @@
-import './App.css';
-import { Fragment } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRoutes } from './routes';
-import DefaultLayout from './components/layout/DefaultLayout';
+import './app.scss';
+// import { Fragment } from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { publicRoutes } from './routes';
+// import DefaultLayout from './components/layout/DefaultLayout';
 import { ConfigProvider } from 'antd';
+import HomePage from './pages/Home';
 
 
 function App() {
@@ -27,7 +28,10 @@ function App() {
         },
       }}
     >
-    <Router>
+    <div className="app">
+      <HomePage />
+    </div>
+    {/* <Router>
       <div className="app">
         <Routes>
           {publicRoutes.map((route, index) => {
@@ -47,7 +51,7 @@ function App() {
                 path={route.path}
                 element={
                   <Layout>
-                      <HomePage />
+                    <HomePage />
                   </Layout>
                 }
               />
@@ -55,7 +59,7 @@ function App() {
           })}
         </Routes>
       </div>
-    </Router>
+    </Router> */}
     </ConfigProvider>
   );
 }
