@@ -6,9 +6,13 @@ import LeftSider from "./common/left-sider";
 
 import s from './default-layout.module.scss';
 
+interface IProps {
+  children: any;
+}
+
 const { Sider } = Layout;
 
-const DefaultLayout = ({ children }: any) => {
+const DefaultLayout = ({ children }: IProps) => {
   return (
     <Layout className={s['default-layout']}>
       <Header />

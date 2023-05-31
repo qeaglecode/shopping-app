@@ -10,7 +10,7 @@ const RightHeader: React.FC = () => {
   return (
     <div className={s['box-right-header']}>
       <ul>
-        <li className={s['hidden-on-mobile']}><a href='/'>Trang Chủ</a></li>
+        <li className={s['hidden-on-mobile']}><a href='/home'>Trang Chủ</a></li>
         <li className={s['hidden-on-mobile']}><a href='/introduce'>Giới Thiệu</a></li>
         <li className={s['hidden-on-mobile']}><a href='/procedure'>Quy Trình</a></li>
         <li className={s['hidden-on-mobile']}><a href='/project'>Dự Án</a></li>
