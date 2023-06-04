@@ -2,7 +2,7 @@ import { useState } from 'react';
 import s from './right-header.module.scss';
 import { MenuOutlined } from '@ant-design/icons';
 import { Drawer, Menu } from 'antd';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const RightHeader: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,9 +17,9 @@ const RightHeader: React.FC = () => {
         <li className={s['hidden-on-mobile']}>
           <a href='/' >Sản phẩm</a>
           <ul>
-            <li><a href="/product/furniture">Nội Thất</a></li>
-            <li><a href="/product/exterior">Ngoại Thất</a></li>
-            <li><a href="/product/decorate">Trang Trí</a></li>
+            <li><a href="/products/furniture">Nội Thất</a></li>
+            <li><a href="/products/exterior">Ngoại Thất</a></li>
+            <li><a href="/products/decorate">Trang Trí</a></li>
           </ul></li>
         <li className={s['hidden-on-mobile']}><a href='/contact'>Liên hệ</a></li>
         <li className={s['menu-icon']} onClick={() => setShowMenu(true)}><MenuOutlined /></li>
@@ -33,7 +33,7 @@ const RightHeader: React.FC = () => {
       >
         <Menu>
           <Menu.Item>
-            <Link to="/">
+            <Link href="/">
               Trang Chủ
             </Link>
           </Menu.Item>

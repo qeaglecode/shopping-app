@@ -1,4 +1,4 @@
-@import '../../../styles/default.scss';
+@import 'styles/globals.scss';
 
 #header-container {
   width: 100%;
@@ -7,14 +7,14 @@
   height: 60px;
   display: flex;
   z-index: 1;
+  padding: 0 20px;
 
   .left-content {
     height: 100%;
     width: 30%;
-    padding-left: 20px;
     display: flex;
     img {
-      max-width: 100%;
+      width: auto;
       height: 100%;
       object-fit: contain;
       cursor: pointer;
@@ -26,6 +26,5 @@
     width: 70%;
     display: flex;
     justify-content: flex-end;
-    padding: 0 20px;
   }
 }

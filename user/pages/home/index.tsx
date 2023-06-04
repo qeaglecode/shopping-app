@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import s from './home.module.scss';
-import { productService } from '../../services/product.service';
+import Image from 'next/image'
+import { productService } from 'src/services/product.service';
 
 const HomePage = () => {
   const [avatar, setAvatar] = useState() as any;
@@ -33,7 +34,7 @@ const HomePage = () => {
       <div className={s['home-page']}>
         <input type="file" onChange={(file) => handlePreviewAvatar(file)} />
         {avatar && (
-          <img src={avatar.preview} alt="" width={300} height={300} />
+          <Image src={avatar.preview} alt="" width={300} height={300} />
         )}
       </div>
     </div>

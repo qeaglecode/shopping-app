@@ -1,4 +1,4 @@
-import { isUrl } from '../lib/string';
+import { isUrl } from 'src/lib/string';
 import fetch from 'isomorphic-unfetch';
 import getConfig from 'next/config';
 import cookie from 'js-cookie';
@@ -89,6 +89,9 @@ export abstract class APIRequest {
         APIRequest.token || (typeof window !== 'undefined' ? cookie.get(TOKEN) : ''),
       ...(headers || {})
     };
+
+    console.log('1111', isUrl(url) ? url : `${baseApiEndpoint}${url}`);
+    
 
     return fetch(isUrl(url) ? url : `${baseApiEndpoint}${url}`, {
       method: verb,

@@ -7,6 +7,7 @@ import {
 import logo from '../../../assets/images/ts_house.png';
 import s from './footer.module.scss';
 import { Col, Row } from 'antd';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -16,18 +17,18 @@ const Footer = () => {
           <div className={s['social-contacts']}>
             <div className={s['section-logo']}>
               <a href='/'>
-                <img
+                <Image
                   src={logo}
                   alt='logo'
                   className={s['logo']}
                 />
               </a>
               {' '}
-              <span className={s['company-name']}>T'S HOUSE</span>
+              <span className={s['company-name']}>T&#39;S HOUSE</span>
             </div>
             <p className={s['company-description']}>
                 What is Lorem Ipsum?
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
           </div>
         </Col>
@@ -35,8 +36,8 @@ const Footer = () => {
           <div className={s['services']}>
             <h1 className={s['title']}>Dịch vụ</h1>
             <ul>
-              <li><a href='/'>Báo giá</a></li>
               <li><a href='/'>Tư Vấn</a></li>
+              <li><a href='/'>Báo giá</a></li>
               <li><a href='/'>Lên Thiết Kế</a></li>
               <li><a href='/'>Thiết Kế Nội Thất</a></li>
               <li><a href='/'>Thiết Kế Ngoại Thất</a></li>
@@ -73,7 +74,7 @@ const Footer = () => {
           <p className={s['declare']}>
             Developed by
             {' '}
-            <a className={s['author-name']} href='https://www.facebook.com/qeagleofficial'>Q Eagle</a>
+            <a className={s['author-name']} href='https://www.facebook.com/qeagleofficial' target='_blank'>Q Eagle</a>
             {' '}
             -
             {' '}

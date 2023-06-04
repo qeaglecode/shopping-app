@@ -18,13 +18,13 @@ const DefaultLayout = ({ children }: IProps) => {
       <Header />
       <Layout>
         
-        <Sider className={s['left-sider-layout']}>
+        <Sider className={s['left-sider-layout']} width="20%">
           <LeftSider />
         </Sider>
         
         {children}
 
-        <Sider className={s['right-sider-layout']}>
+        <Sider className={s['right-sider-layout']} width="20%">
           <RightSider />
         </Sider>
 

@@ -1,8 +1,5 @@
-/** @type {import('next').NextConfig} */
-const withPlugins = require('next-compose-plugins');
-const withLess = require('next-with-less');
 const path = require('path');
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   // react 18 about strict mode https://reactjs.org/blog/2022/03/29/react-v18.html#new-strict-mode-behaviors
   // enable for testing purpose
@@ -33,42 +30,33 @@ const nextConfig = {
     return [
       {
         source: '/home',
-        destination: '/Home',
+        destination: '/home',
       },
       {
         source: '/introduce',
-        destination: '/Introduce'
+        destination: '/introduce'
       },
       {
         source: '/procedure',
-        destination: '/Procedure'
+        destination: '/procedure'
       },
       {
         source: '/project',
-        destination: '/Project'
+        destination: '/project'
       },
       {
         source: '/products',
-        destination: '/Products'
+        destination: '/products'
       },
       {
         source: '/contact',
-        destination: '/Contact'
+        destination: '/contact'
       },
     ];
-  }
-};
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+}
 
-module.exports = withPlugins([
-  withLess({
-    lessLoaderOptions: {
-      lessOptions: {
-        javascriptEnabled: true
-      },
-    },
-    sassOptions: {
-      includePaths: [path.join(__dirname, 'styles')],
-    },
-  }),
-  nextConfig
-]);
+module.exports = nextConfig

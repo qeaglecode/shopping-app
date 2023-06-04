@@ -1,4 +1,5 @@
 import RightHeader from './right-header';
+import Image from 'next/image';
 import logo from '../../../assets/images/ts_house.png';
 import s from './header.module.scss';
 
@@ -7,7 +8,7 @@ const Header = () => {
     <h1 id={s['header-container']}>
       <div className={s['left-content']}>
         <a href='/'>
-          <img src={logo} alt='logo' />
+          <Image src={logo} alt='logo' />
         </a>
       </div>
 
