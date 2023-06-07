@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import s from '@/styles/landing-page.module.scss';
+import s from '@styles/landing-page.module.scss';
+import Dashboard from './dashboard';
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={s.main}>
-        Dashboard
+        <Dashboard />
       </main>
     </>
   )
