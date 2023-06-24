@@ -1,2 +1,3 @@
-export * from './DefaultLayout';
+export * from './PrimaryLayout';
 export * from './HeaderOnly';
+export * from './DefaultLayout';

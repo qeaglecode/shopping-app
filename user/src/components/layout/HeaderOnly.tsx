@@ -1,15 +1,12 @@
+import { Layout } from "antd";
 import Header from "./common/Header";
 
 const HeaderOnly = ({ children }: any) => {
   return (
-    <div>
+    <Layout>
       <Header />
-      <div className="container">
-        <div className="content" style={{ background: 'red', color: 'red' }}>
-          {children}
-        </div>
-      </div>
-    </div>
+      {children}
+    </Layout>
   );
 }
 
