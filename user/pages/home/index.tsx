@@ -30,13 +30,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="container-content">
-      <div className={s['home-page']}>
-        <input type="file" onChange={(file) => handlePreviewAvatar(file)} />
-        {avatar && (
-          <Image src={avatar.preview} alt="" width={300} height={300} />
-        )}
-      </div>
+    <div className={s['home-page']}>
+      <input type="file" onChange={(file) => handlePreviewAvatar(file)} />
+      {avatar && (
+        <Image src={avatar.preview} alt="" width={300} height={300} />
+      )}
     </div>
   );
 }

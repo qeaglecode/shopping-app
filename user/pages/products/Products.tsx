@@ -13,20 +13,18 @@ const Products = () => {
 	}, []);
 
 	return (
-    <div className="container-content">
-      <div className={s['products-page']}>
-				<div className={s['page-title']}>
-					<h1>PRODUCTS</h1>
-				</div>
-				<Row>
-        {products && products.map((product: any) => (
-					<Col md={6} xs={12} key={product._id}>
-						<ProductCard product={product} />
-					</Col>
-				))}
-				</Row>
-      </div>
-    </div>
+		<div className={s['products-page']}>
+			<div className={s['page-title']}>
+				<h1>PRODUCTS</h1>
+			</div>
+			<Row>
+			{products && products.map((product: any) => (
+				<Col md={6} xs={12} key={product._id}>
+					<ProductCard product={product} />
+				</Col>
+			))}
+			</Row>
+		</div>
   );
 }
 

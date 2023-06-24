@@ -21,9 +21,9 @@ const PrimaryLayout = ({ children }: IProps) => {
         <Sider className={s['left-sider-layout']} width="20%">
           <LeftSider />
         </Sider>
-        
-        {children}
-
+          <div className="container-content">
+            {children}
+          </div>
         <Sider className={s['right-sider-layout']} width="20%">
           <RightSider />
         </Sider>
