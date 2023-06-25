@@ -13,46 +13,6 @@
   }
 }
 
-.brand {
-  z-index: 1;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24px;
-  box-shadow: 0 1px 9px -3px rgba(0, 0, 0, 0.2);
-
-  :global .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-
-    img {
-      height: 30px;
-      object-fit: contain;
-      width: 100%;
-      margin-right: 8px;
-    }
-
-    h1 {
-      vertical-align: text-bottom;
-      font-size: 16px;
-      text-transform: uppercase;
-      display: inline-block;
-      font-weight: 700;
-      color: $primary-color;
-      white-space: nowrap;
-      margin-bottom: 0;
-
-      :local {
-        animation: fadeRightIn 300ms ease-in-out;
-        animation-fill-mode: both;
-      }
-    }
-  }
-}
-
 .menuContainer {
   height: calc(100vh - 120px);
   overflow-x: hidden;

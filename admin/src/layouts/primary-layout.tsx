@@ -22,7 +22,7 @@ import Loader from '@components/common/base/loader';
 import Header from '@components/common/layout/header';
 import Sider from '@components/common/layout/sider';
 import { BackTop, Layout } from 'antd';
-import { enquireScreen, unenquireScreen } from 'enquire-js';
+// import { enquireScreen, unenquireScreen } from 'enquire-js';
 import { Router } from 'next/router';
 import {
   useEffect, useRef, useState
@@ -34,20 +34,17 @@ import style from './primary-layout.module.scss';
 interface IPrimaryLayout {
   children: any;
   config: IUIConfig;
-  updateUIHandler: Function;
   loadUIHandler: Function;
   ui: any;
 }
 
 function PrimaryLayout({
   children,
-  updateUIHandler,
-  loadUIHandler,
   ui
 }: IPrimaryLayout) {
-  const [isMobile, setIsMobile] = useState(false);
   const [routerChange, setRouterChange] = useState(false);
   const [collapsed, setCollapsed] = useState(ui?.collapsed);
+  const [openPopup, setOpenPopup] = useState(false);
 
   const enquireHandler = useRef(null);
 
@@ -56,14 +53,13 @@ function PrimaryLayout({
     Router.events.on('routeChangeComplete', async () => setRouterChange(false));
   };
 
-  const onThemeChange = (theme: string) => {
-    updateUIHandler({ theme });
+  const closePopup = (c: any) => {
+    setOpenPopup(false);
   };
 
-  const onCollapseChange = (c: any) => {
-    setCollapsed(c);
-    updateUIHandler({ collapsed: c });
-  };
+  const handleOpenPopup = (val: boolean) => {
+    setOpenPopup(val);
+  }
 
   // useEffect(() => {
   //   loadUIHandler();
@@ -87,11 +83,7 @@ function PrimaryLayout({
   const {
     fixedHeader, logo, siteName, theme
   } = ui || {};
-  const headerProps = {
-    collapsed,
-    theme,
-    onCollapseChange
-  };
+
   const sliderMenus = [
     {
       key: 'dashboard',
@@ -476,35 +468,34 @@ function PrimaryLayout({
           key: 'account-settings',
           route: '/account/settings'
         }
-        // {
-        //   label: 'Translate Settings',
-        //   key: 'system-settings-translate',
-        //   route: '/settings/translation'
-        // }
       ]
     }
   ];
+
   const siderProps = {
-    collapsed,
-    isMobile,
+    openPopup,
     logo,
     siteName,
     theme,
     menus: sliderMenus,
-    onCollapseChange,
-    onThemeChange
+    closePopup
   };
+
   return (
     <Layout>
-      <Sider {...siderProps} />
-      <div className={style.container} style={{ paddingTop: fixedHeader ? 72 : 0 }} id="primaryLayout">
-        <Header {...headerProps} />
-        <Layout.Content className={style.content} style={{ position: 'relative' }}>
+      <div className={style.container} id="primaryLayout">
+        <Header
+          handleOpenPopup={() => handleOpenPopup}
+        />
+
+        <Layout.Content>
           {routerChange && <Loader spinning />}
-          {/* <Bread routeList={newRouteList} /> */}
-          {children}
+            {/* <Bread routeList={newRouteList} /> */}
+            {children}
+          <Sider {...siderProps} />
         </Layout.Content>
-        <BackTop className={style.backTop} target={() => document.querySelector('#primaryLayout') as any} />
+
+        <BackTop className={style.backTop} onClick={() => document.querySelector('#layoutHeader') as any} />
       </div>
     </Layout>
   );

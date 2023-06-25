@@ -9,13 +9,14 @@ type IDefaultProps = {
 const LayoutMap = {
   primary: PrimaryLayout,
   public: PublicLayout
-};
+} as any;
 
-export default function BaseLayout({
+
+export default function DefaultLayout({
   children,
-  layout = null
+  layout
 }: IDefaultProps) {
-  const Container = layout && LayoutMap[layout] ? LayoutMap[layout] : LayoutMap.primary;
+  const Container = layout && LayoutMap[layout] ? LayoutMap[layout] : PrimaryLayout;
   return (
     <Container>{children}</Container>
   );

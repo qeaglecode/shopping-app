@@ -1,7 +1,9 @@
 @import '../../styles/default.scss';
 
 .backTop {
+  position: fixed;
   right: 50px;
+  z-index: 1000;
 
   .ant-back-top-content {
     background: $primary-color;
@@ -32,8 +34,7 @@
 .container {
   height: 100vh;
   flex: 1;
-  width: calc(100% - 256px);
-  overflow-y: scroll;
+  width: 100%;
   overflow-x: hidden;
 }
 

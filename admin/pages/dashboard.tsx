@@ -4,14 +4,15 @@ import {
   LineChartOutlined,
   PieChartOutlined
 } from '@ant-design/icons';
-import { BreadcrumbComponent } from '@components/common';
 import { statsService } from '@services/stats.service';
 import {
   Card, Col, Row, Statistic
 } from 'antd';
+import classNames from 'classnames';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import s from './dashboard.module.scss';
 
 interface D {
   route: string;
@@ -194,8 +195,18 @@ export default function Dashboard() {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <BreadcrumbComponent breadcrumbs={[{ title: 'Statistic' }]} />
+      
+
       <Row gutter={24} className="dashboard-stats">
+        <Col span={24}>
+          <div className={s['site-name']}>
+            <Link href="/" legacyBehavior>
+              <a>
+                <h1>Admin Panel</h1>
+              </a>
+            </Link>
+          </div>
+        </Col>
         {stats
           && Object.keys(initialData).map((key) => (
             <Col span={8} key={key}>

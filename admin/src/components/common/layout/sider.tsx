@@ -1,97 +1,54 @@
 import {
-  Drawer, Layout, MenuTheme, Switch
+  Drawer, Switch
 } from 'antd';
-import Link from 'next/link';
-
-import ScrollBar from '../base/scroll-bar';
+import { isBrowser } from 'react-device-detect';
 import { SiderMenu } from './menu';
 import style from './sider.module.scss';
-import Image from 'next/image';
+import { useState } from 'react';
 
 type ISiderProps = {
-  isMobile?: boolean;
-  collapsed?: boolean;
-  theme?: MenuTheme;
+  openPopup?: boolean;
   logo?: string;
   siteName?: string;
-  onThemeChange?: Function
-  onCollapseChange?: Function;
+  closePopup?: Function;
   menus?: any;
 }
 
 function Sider(this: any, {
-  isMobile = false,
-  collapsed = false,
-  theme = 'dark',
+  openPopup = false,
   logo = '',
   siteName = '',
-  onThemeChange = () => { },
-  onCollapseChange = () => { },
+  closePopup = () => { },
   menus = []
 }: ISiderProps) {
-  return (
-    <Layout.Sider
-      width={256}
-      breakpoint="lg"
-      trigger={null}
-      collapsible
-      collapsed={collapsed}
-      className={style.slider}
-    >
-      <div className={style.brand}>
-        <div className="logo">
-          <Link href="/" legacyBehavior>
-            <a>
-              {logo ? <Image alt="logo" src={logo} /> : <h1>{siteName || 'Admin Panel'}</h1>}
-            </a>
-          </Link>
-        </div>
-      </div>
+  const [theme, setTheme] = useState('dark');
 
-      <div className={style.menuContainer}>
-        {isMobile ? (
-          <Drawer
-            open={!collapsed}
-            width={collapsed ? 0 : 300}
-            placement="left"
-            onClose={() => onCollapseChange(true)}
-          >
-            <SiderMenu
-              menus={menus}
-              theme={theme}
-              collapsed={false}
-            />
-          </Drawer>
-        )
-          : (
-            <ScrollBar
-              options={{
-                // Disabled horizontal scrolling, https://github.com/utatti/perfect-scrollbar#options
-                suppressScrollX: true
-              }}
-            >
-              <SiderMenu
-                menus={menus}
-                theme={theme}
-                collapsed={collapsed}
-              />
-            </ScrollBar>
-          )}
-      </div>
-      {!collapsed && (
+  const onThemeChange = (themeValue: any) => {
+    setTheme(themeValue)
+  };
+
+  return (
+    <div className={style.menuContainer}>
+      <Drawer
+        open={openPopup}
+        width={isBrowser ? 300 : "100%"}
+        placement="right"
+        onClose={() => closePopup(false)}
+      >
+        <SiderMenu
+          menus={menus}
+          theme={theme as any}
+        />
         <div className={style.switchTheme}>
           <Switch
-            onChange={onThemeChange && onThemeChange.bind(
-              this,
-              theme === 'dark' ? 'light' : 'dark'
-            )}
+            onChange={() => onThemeChange(theme === 'dark' ? 'light' : 'dark' )}
             defaultChecked={theme === 'dark'}
             checkedChildren="Dark"
             unCheckedChildren="Light"
           />
         </div>
-      )}
-    </Layout.Sider>
+      </Drawer>
+    </div>
   );
 }
 
