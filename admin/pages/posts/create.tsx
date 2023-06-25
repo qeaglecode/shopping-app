@@ -2,10 +2,7 @@ import Head from 'next/head';
 import { PureComponent, Fragment } from 'react';
 import Page from '@components/common/layout/page';
 import Router from 'next/router';
-import dynamic from 'next/dynamic';
 import {
-  Row,
-  Col,
   Form,
   Input,
   Select,
@@ -13,11 +10,10 @@ import {
   Breadcrumb,
   message
 } from 'antd';
-import { HomeOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined } from '@ant-design/icons';
 import { postService } from '@services/post.service';
-import { EditorState, convertToRaw } from 'draft-js';
-import draftToHtml from 'draftjs-to-html';
-import { Editor } from 'react-draft-wysiwyg';
+import TextEditor from '@components/common/text-editor';
+
 // const WYSIWYG = dynamic(() => import('@components/wysiwyg'), {
 //   ssr: false
 // });
@@ -26,7 +22,7 @@ class PostCreate extends PureComponent<any> {
 
   state = {
     submitting: false,
-    editorState: EditorState.createEmpty()
+    editorState: null
   };
 
   static async getInitialProps(ctx: any) {
@@ -102,7 +98,6 @@ class PostCreate extends PureComponent<any> {
 
         <Page>
           <Form
-            onFinish={this.submit.bind(this)}
             initialValues={{
               title: '',
               shortDescription: '',
@@ -110,6 +105,7 @@ class PostCreate extends PureComponent<any> {
             }}
             labelCol={{ span: 4 }}
             wrapperCol={{ span: 20 }}
+            onFinish={this.submit.bind(this)}
           >
             <Form.Item
               name="title"
@@ -118,36 +114,26 @@ class PostCreate extends PureComponent<any> {
             >
               <Input placeholder="Enter your title" />
             </Form.Item>
+            
+            <Form.Item label="Content" name="textEditor">
+              {/* <TextEditor /> */}
+            </Form.Item>
 
             <Form.Item name="slug" label="Slug">
               <Input placeholder="Custom friendly slug" />
             </Form.Item>
 
-            <Form.Item name="shortDescription" label="Short description">
-              <Input.TextArea rows={3} />
-            </Form.Item>
-            <Form.Item label="Content">
-              <Editor
-                editorState={editorState}
-                wrapperClassName="demo-wrapper"
-                editorClassName="demo-editor"
-                onEditorStateChange={() => this.onEditorStateChange}
-              />
-              <textarea
-                disabled
-                value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
-              />
-            </Form.Item>
             <Form.Item
               name="status"
               label="Status"
               rules={[{ required: true }]}
             >
               <Select>
-                <Select.Option value="published">Publish</Select.Option>
-                <Select.Option value="draft">Draft</Select.Option>
+                <Select.Option value="public">Public</Select.Option>
+                <Select.Option value="hide">Hide</Select.Option>
               </Select>
             </Form.Item>
+
             <Form.Item wrapperCol={{ offset: 4 }}>
               <Button
                 type="primary"

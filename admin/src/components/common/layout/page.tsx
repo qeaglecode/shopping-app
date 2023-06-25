@@ -1,7 +1,7 @@
-import React, { Component, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import classnames from 'classnames'
 import Loader from '../base/loader'
-import './page.module.scss';
+// import './page.module.scss';
 
 interface IProps {
   loading?: boolean;
