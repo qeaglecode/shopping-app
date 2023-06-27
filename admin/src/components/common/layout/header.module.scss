@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 72px;
+  height: 60px;
   z-index: 9;
   align-items: center;
 
@@ -23,19 +23,22 @@
     }
   }
 
-  .leftContainer {
-    height: 72px;
+  .left-container {
+    position: absolute;
+    height: 100%;
+    left: 10px;
   }
 
-  .rightContainer {
+  .right-content {
     position: absolute;
-    right: 0px;
+    right: 20px;
+    height: 100%;
     display: flex;
     align-items: center;
 
-    ul li {
-      list-style: none;
-      padding: 0 20px;
+    .admin-avatar {
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 }

@@ -6,21 +6,17 @@ import { SiderMenu } from './menu';
 import style from './sider.module.scss';
 import { useState } from 'react';
 
-type ISiderProps = {
-  openPopup?: boolean;
-  logo?: string;
-  siteName?: string;
+type IProps = {
+  openPopup: boolean;
+  menus: any;
   closePopup?: Function;
-  menus?: any;
 }
 
-function Sider(this: any, {
+function Sider({
   openPopup = false,
-  logo = '',
-  siteName = '',
   closePopup = () => { },
   menus = []
-}: ISiderProps) {
+}: IProps) {
   const [theme, setTheme] = useState('dark');
 
   const onThemeChange = (themeValue: any) => {
