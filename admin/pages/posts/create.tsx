@@ -12,7 +12,7 @@ import {
 } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
 import { postService } from '@services/post.service';
-import TextEditor from '@components/common/text-editor';
+import Editor from '@components/common/Editor';
 
 // const WYSIWYG = dynamic(() => import('@components/wysiwyg'), {
 //   ssr: false
@@ -116,7 +116,7 @@ class PostCreate extends PureComponent<any> {
             </Form.Item>
             
             <Form.Item label="Content" name="textEditor">
-              {/* <TextEditor /> */}
+              <Editor />
             </Form.Item>
 
             <Form.Item name="slug" label="Slug">
