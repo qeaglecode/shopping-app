@@ -18,7 +18,7 @@ export function BreadcrumbComponent({
     <div style={{ marginBottom: '16px' }}>
       <Breadcrumb>
         <Breadcrumb.Item href="/dashboard">
-          <HomeOutlined />
+          <HomeOutlined rev={undefined} />
         </Breadcrumb.Item>
         {breadcrumbs?.map((b) => (
           <Breadcrumb.Item key={b.title}>

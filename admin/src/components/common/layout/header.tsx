@@ -37,7 +37,7 @@ function Header() {
     {
       key: 'dashboard',
       label: 'Dashboard',
-      icon: <PieChartOutlined />,
+      icon: <PieChartOutlined rev={undefined} />,
       children: [
         {
           key: 'stats',
@@ -49,7 +49,7 @@ function Header() {
     {
       key: 'posts',
       label: 'Static Pages',
-      icon: <ContainerOutlined />,
+      icon: <ContainerOutlined rev={undefined} />,
       children: [
         {
           key: 'post-page',
@@ -66,7 +66,7 @@ function Header() {
     {
       key: 'menu',
       label: 'FE Menu',
-      icon: <MenuOutlined />,
+      icon: <MenuOutlined rev={undefined} />,
       children: [
         {
           key: 'menu-listing',
@@ -83,7 +83,7 @@ function Header() {
     {
       key: 'banner',
       label: 'Banners',
-      icon: <FileImageOutlined />,
+      icon: <FileImageOutlined rev={undefined} />,
       children: [
         {
           key: 'banner-listing',
@@ -100,7 +100,7 @@ function Header() {
     {
       key: 'email-template',
       label: 'Email templates',
-      icon: <MailOutlined />,
+      icon: <MailOutlined rev={undefined} />,
       children: [
         {
           key: 'email-listing',
@@ -112,7 +112,7 @@ function Header() {
     {
       key: 'stream-categories',
       label: 'Stream-Categories',
-      icon: <FlagOutlined />,
+      icon: <FlagOutlined rev={undefined} />,
       children: [
         {
           key: 'stream-category-list',
@@ -129,7 +129,7 @@ function Header() {
     {
       key: 'report-content',
       label: 'Report Content',
-      icon: <FlagOutlined />,
+      icon: <FlagOutlined rev={undefined} />,
       children: [
         {
           key: 'list-of-reports',
@@ -151,7 +151,7 @@ function Header() {
     {
       key: 'studio',
       label: 'Studios',
-      icon: <WalletOutlined />,
+      icon: <WalletOutlined rev={undefined} />,
       children: [
         {
           label: 'List Studios',
@@ -173,7 +173,7 @@ function Header() {
     {
       key: 'accounts',
       label: 'Users',
-      icon: <UserOutlined />,
+      icon: <UserOutlined rev={undefined} />,
       children: [
         {
           label: 'User list',
@@ -190,7 +190,7 @@ function Header() {
     {
       key: 'performer',
       label: 'Performers',
-      icon: <WomanOutlined />,
+      icon: <WomanOutlined rev={undefined} />,
       children: [
         {
           label: 'Current categories',
@@ -222,7 +222,7 @@ function Header() {
     {
       key: 'performers-photos',
       label: 'Photos',
-      icon: <CameraOutlined />,
+      icon: <CameraOutlined rev={undefined} />,
       children: [
         {
           key: 'photo-listing',
@@ -254,7 +254,7 @@ function Header() {
     {
       key: 'performers-products',
       label: 'Products',
-      icon: <SkinOutlined />,
+      icon: <SkinOutlined rev={undefined} />,
       children: [
         {
           key: 'product-listing',
@@ -271,7 +271,7 @@ function Header() {
     {
       key: 'videos',
       label: 'Videos',
-      icon: <VideoCameraOutlined />,
+      icon: <VideoCameraOutlined rev={undefined} />,
       children: [
         {
           key: 'video-listing',
@@ -288,7 +288,7 @@ function Header() {
     {
       key: 'tokens',
       label: 'Token Packages',
-      icon: <BankOutlined />,
+      icon: <BankOutlined rev={undefined} />,
       children: [
         {
           key: 'token-listing',
@@ -305,7 +305,7 @@ function Header() {
     {
       key: 'earning',
       label: 'Earnings log',
-      icon: <DollarOutlined />,
+      icon: <DollarOutlined rev={undefined} />,
       children: [
         {
           key: 'earning-listing-performer',
@@ -322,7 +322,7 @@ function Header() {
     {
       key: 'i18n',
       label: 'Multilingual',
-      icon: <ProfileOutlined />,
+      icon: <ProfileOutlined rev={undefined} />,
       children: [
         {
           label: 'List text',
@@ -344,18 +344,18 @@ function Header() {
     {
       key: 'payments',
       label: 'Payments',
-      icon: <DollarOutlined />,
+      icon: <DollarOutlined rev={undefined} />,
       children: [
         {
           key: 'paymentslist',
           label: 'Payments',
-          icon: <DollarOutlined />,
+          icon: <DollarOutlined rev={undefined} />,
           route: '/payment'
         },
         {
           key: 'payment-information',
           label: 'Payment Informations',
-          icon: <BankFilled />,
+          icon: <BankFilled rev={undefined} />,
           route: '/payment-information'
         }
       ]
@@ -363,7 +363,7 @@ function Header() {
     {
       key: 'order',
       label: 'Order history',
-      icon: <OrderedListOutlined />,
+      icon: <OrderedListOutlined rev={undefined} />,
       children: [
         {
           key: 'order-listing',
@@ -375,7 +375,7 @@ function Header() {
     {
       key: 'payout',
       label: 'Payout requests',
-      icon: <MenuUnfoldOutlined />,
+      icon: <MenuUnfoldOutlined rev={undefined} />,
       children: [
         {
           key: 'payout-listing-performer',
@@ -392,7 +392,7 @@ function Header() {
     {
       key: 'settings',
       label: 'Settings',
-      icon: <PieChartOutlined />,
+      icon: <PieChartOutlined rev={undefined} />,
       children: [
         {
           key: 'system-settings',

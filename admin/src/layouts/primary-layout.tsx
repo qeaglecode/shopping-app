@@ -1,5 +1,5 @@
 import Header from '@components/common/layout/header';
-import { BackTop, Layout } from 'antd';
+import { FloatButton, Layout } from 'antd';
 
 import style from './primary-layout.module.scss';
 
@@ -20,7 +20,7 @@ function PrimaryLayout({
           {children}
         </Layout.Content>
 
-        <BackTop className={style.backTop} onClick={() => document.querySelector('#layoutHeader') as any} />
+        <FloatButton.BackTop className={style.backTop} onClick={() => document.querySelector('#layoutHeader') as any} />
       </div>
     </Layout>
   );

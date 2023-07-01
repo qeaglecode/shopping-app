@@ -29,7 +29,7 @@ const initialData: Record<string, D> = {
     asPath: '/users?status=active',
     title: 'ACTIVE USERS',
     valueStyle: { color: '#ffc107' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'active' }
   },
   totalInactiveUsers: {
@@ -37,7 +37,7 @@ const initialData: Record<string, D> = {
     asPath: '/users?status=inactive',
     title: 'INACTIVE USERS',
     valueStyle: { color: '#ffc107' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'inactive' }
   },
   totalPendingUsers: {
@@ -45,7 +45,7 @@ const initialData: Record<string, D> = {
     asPath: '/users?status=pending',
     title: 'PENDING USERS',
     valueStyle: { color: '#ffc107' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'pending' }
   },
   totalActivePerformers: {
@@ -53,7 +53,7 @@ const initialData: Record<string, D> = {
     asPath: '/performer?status=active',
     title: 'ACTIVE PERFORMERS',
     valueStyle: { color: '#009688' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'active' }
   },
   totalInactivePerformers: {
@@ -61,7 +61,7 @@ const initialData: Record<string, D> = {
     asPath: '/performer?status=inactive',
     title: 'INACTIVE PERFORMERS',
     valueStyle: { color: '#009688' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'inactive' }
   },
   totalPendingPerformers: {
@@ -69,7 +69,7 @@ const initialData: Record<string, D> = {
     asPath: '/performer?status=pending',
     title: 'PENDING PERFORMERS',
     valueStyle: { color: '#009688' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'pending' }
   },
   totalActiveStudio: {
@@ -77,7 +77,7 @@ const initialData: Record<string, D> = {
     asPath: '/studios?status=active',
     title: 'ACTIVE STUDIO',
     valueStyle: { color: '#ff66b3' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'active' }
   },
   totalInactiveStudio: {
@@ -85,7 +85,7 @@ const initialData: Record<string, D> = {
     asPath: '/studios?status=inactive',
     title: 'INACTIVE STUDIO',
     valueStyle: { color: '#ff66b3' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'inactive' }
   },
   totalPendingStudio: {
@@ -93,7 +93,7 @@ const initialData: Record<string, D> = {
     asPath: '/studios?status=pending',
     title: 'PENDING STUDIO',
     valueStyle: { color: '#ff66b3' },
-    prefix: <LineChartOutlined />,
+    prefix: <LineChartOutlined rev={undefined} />,
     query: { status: 'pending' }
   },
   totalGalleries: {
@@ -101,7 +101,7 @@ const initialData: Record<string, D> = {
     asPath: '/gallery',
     title: 'GALLERIES',
     valueStyle: { color: '#5399d0' },
-    prefix: <PieChartOutlined />,
+    prefix: <PieChartOutlined rev={undefined} />,
     query: {}
   },
   totalPhotos: {
@@ -109,7 +109,7 @@ const initialData: Record<string, D> = {
     asPath: '/photos',
     title: 'PHOTOS',
     valueStyle: { color: '#5399d0' },
-    prefix: <PieChartOutlined />,
+    prefix: <PieChartOutlined rev={undefined} />,
     query: {}
   },
   totalVideos: {
@@ -117,7 +117,7 @@ const initialData: Record<string, D> = {
     asPath: '/video',
     title: 'VIDEOS',
     valueStyle: { color: '#5399d0' },
-    prefix: <DotChartOutlined />,
+    prefix: <DotChartOutlined rev={undefined} />,
     query: {}
   },
   totalProducts: {
@@ -125,7 +125,7 @@ const initialData: Record<string, D> = {
     asPath: '/product',
     title: 'PRODUCTS',
     valueStyle: { color: '#5399d0' },
-    prefix: <PieChartOutlined />,
+    prefix: <PieChartOutlined rev={undefined} />,
     query: {}
   },
   totalDeliverdOrders: {
@@ -133,7 +133,7 @@ const initialData: Record<string, D> = {
     asPath: '/order?deliveryStatus=delivered',
     title: 'DELIVERED ORDERS',
     valueStyle: { color: '#c8d841' },
-    prefix: <AreaChartOutlined />,
+    prefix: <AreaChartOutlined rev={undefined} />,
     query: { deliveryStatus: 'delivered' }
   },
   totalShippingdOrders: {
@@ -141,7 +141,7 @@ const initialData: Record<string, D> = {
     asPath: '/order?deliveryStatus=shipping',
     title: 'SHIPPING ORDERS',
     valueStyle: { color: '#c8d841' },
-    prefix: <AreaChartOutlined />,
+    prefix: <AreaChartOutlined rev={undefined} />,
     query: { deliveryStatus: 'shipping' }
   },
   totalRefundedOrders: {
@@ -149,7 +149,7 @@ const initialData: Record<string, D> = {
     asPath: '/order?deliveryStatus=refunded',
     title: 'REFUNDED ORDERS',
     valueStyle: { color: '#c8d841' },
-    prefix: <AreaChartOutlined />,
+    prefix: <AreaChartOutlined rev={undefined} />,
     query: { deliveryStatus: 'refunded' }
   },
   totalGrossPrice: {
@@ -157,7 +157,7 @@ const initialData: Record<string, D> = {
     asPath: '/earning',
     title: 'GROSS PROFIT',
     valueStyle: { color: '#fb2b2b' },
-    prefix: <DotChartOutlined />,
+    prefix: <DotChartOutlined rev={undefined} />,
     query: {}
   },
   totalNetPrice: {
@@ -165,7 +165,7 @@ const initialData: Record<string, D> = {
     asPath: '/earning',
     title: 'NET PROFIT',
     valueStyle: { color: '#fb2b2b' },
-    prefix: <DotChartOutlined />,
+    prefix: <DotChartOutlined rev={undefined} />,
     query: {}
   },
   totalStreamTime: {
@@ -173,7 +173,7 @@ const initialData: Record<string, D> = {
     asPath: '/performer',
     title: 'STREAM TIMES',
     valueStyle: { color: '#fb2b2b' },
-    prefix: <DotChartOutlined />,
+    prefix: <DotChartOutlined rev={undefined} />,
     query: {}
   }
 };

@@ -1,18 +1,19 @@
 import Head from 'next/head';
 import { PureComponent, Fragment } from 'react';
 import Page from '@components/common/layout/page';
-import Router from 'next/router';
+// import Router from 'next/router';
 import {
   Form,
   Input,
   Select,
   Button,
   Breadcrumb,
-  message
+  // message
 } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
-import { postService } from '@services/post.service';
-import Editor from '@components/common/Editor';
+// import { postService } from '@services/post.service';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 // const WYSIWYG = dynamic(() => import('@components/wysiwyg'), {
 //   ssr: false
@@ -22,7 +23,7 @@ class PostCreate extends PureComponent<any> {
 
   state = {
     submitting: false,
-    editorState: null
+    descriptionCkData: 'Hello from CKEditor 5'
   };
 
   static async getInitialProps(ctx: any) {
@@ -34,51 +35,43 @@ class PostCreate extends PureComponent<any> {
   }
 
   async submit(data: any) {
-    try {
-      this.setState({ submitting: true });
+    console.log('data', data);
+    
+    // try {
+    //   this.setState({ submitting: true });
 
-      const submitData = {
-        ...data,
-        content: this._content,
-        type: this.props.type
-      };
-      const resp = await postService.create(submitData);
-      message.success('Created successfully');
-      // TODO - redirect
-      this.setState({ submitting: false }, () => {
-        window.setTimeout(() => {
-          Router.push(
-            {
-              pathname: '/posts',
-              query: {
-                id: resp.data._id
-              }
-            },
-            `/posts`
-          );
-        }, 1000);
-      });
-    } catch (e) {
-      // TODO - check and show error here
-      message.error('Something went wrong, please try again!');
-      this.setState({ submitting: false });
-    } finally {
-      this.setState({ submitting: false });
-    }
+    //   const submitData = {
+    //     ...data,
+    //     content: this._content,
+    //     type: this.props.type
+    //   };
+    //   const resp = await postService.create(submitData);
+    //   message.success('Created successfully');
+    //   // TODO - redirect
+    //   this.setState({ submitting: false }, () => {
+    //     window.setTimeout(() => {
+    //       Router.push(
+    //         {
+    //           pathname: '/posts',
+    //           query: {
+    //             id: resp.data._id
+    //           }
+    //         },
+    //         `/posts`
+    //       );
+    //     }, 1000);
+    //   });
+    // } catch (e) {
+    //   // TODO - check and show error here
+    //   message.error('Something went wrong, please try again!');
+    //   this.setState({ submitting: false });
+    // } finally {
+    //   this.setState({ submitting: false });
+    // }
   }
-
-  contentChange(content: { [html: string]: string }) {
-    this._content = content.html;
-  }
-
-  onEditorStateChange: Function = (editorState: any) => {
-    this.setState({
-      editorState,
-    });
-  };
 
   render() {
-    const { editorState } = this.state;
+    const { descriptionCkData } = this.state;
     return (
       <Fragment>
         <Head>
@@ -87,7 +80,7 @@ class PostCreate extends PureComponent<any> {
         <div style={{ marginBottom: '16px' }}>
           <Breadcrumb>
             <Breadcrumb.Item href="/dashboard">
-              <HomeOutlined />
+              <HomeOutlined rev={undefined} />
             </Breadcrumb.Item>
             <Breadcrumb.Item href="/posts">
               <span>Posts</span>
@@ -98,11 +91,6 @@ class PostCreate extends PureComponent<any> {
 
         <Page>
           <Form
-            initialValues={{
-              title: '',
-              shortDescription: '',
-              status: 'published'
-            }}
             labelCol={{ span: 4 }}
             wrapperCol={{ span: 20 }}
             onFinish={this.submit.bind(this)}
@@ -115,8 +103,24 @@ class PostCreate extends PureComponent<any> {
               <Input placeholder="Enter your title" />
             </Form.Item>
             
-            <Form.Item label="Content" name="textEditor">
-              <Editor />
+            <Form.Item
+              label="Description"
+              name="description"
+              initialValue={descriptionCkData}
+            >
+              <div>
+            {/* <CKEditor
+              editor={ ClassicEditor }
+              data={descriptionCkData}
+              onReady={(editor) => {
+                console.log('editor', editor);
+              }}
+              onChange={(event, editor) => {
+                console.log('event', event);
+                console.log('editor2', editor);
+              } }
+            ></CKEditor> */}
+              </div>
             </Form.Item>
 
             <Form.Item name="slug" label="Slug">
