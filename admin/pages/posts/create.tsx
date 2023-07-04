@@ -12,27 +12,14 @@ import {
 } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
 // import { postService } from '@services/post.service';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 // const WYSIWYG = dynamic(() => import('@components/wysiwyg'), {
 //   ssr: false
 // });
 class PostCreate extends PureComponent<any> {
-  private _content: string = '';
-
   state = {
-    submitting: false,
-    descriptionCkData: 'Hello from CKEditor 5'
+    submitting: false
   };
-
-  static async getInitialProps(ctx: any) {
-    const query = ctx.query;
-    if (!query.type) {
-      query.type = 'post';
-    }
-    return query;
-  }
 
   async submit(data: any) {
     console.log('data', data);
@@ -71,7 +58,6 @@ class PostCreate extends PureComponent<any> {
   }
 
   render() {
-    const { descriptionCkData } = this.state;
     return (
       <Fragment>
         <Head>
@@ -103,25 +89,13 @@ class PostCreate extends PureComponent<any> {
               <Input placeholder="Enter your title" />
             </Form.Item>
             
-            <Form.Item
+            {/* <Form.Item
               label="Description"
               name="description"
               initialValue={descriptionCkData}
             >
-              <div>
-            {/* <CKEditor
-              editor={ ClassicEditor }
-              data={descriptionCkData}
-              onReady={(editor) => {
-                console.log('editor', editor);
-              }}
-              onChange={(event, editor) => {
-                console.log('event', event);
-                console.log('editor2', editor);
-              } }
-            ></CKEditor> */}
-              </div>
-            </Form.Item>
+
+            </Form.Item> */}
 
             <Form.Item name="slug" label="Slug">
               <Input placeholder="Custom friendly slug" />

@@ -12,7 +12,7 @@ export interface IResponse<T> {
 export const TOKEN = 'token';
 
 export abstract class APIRequest {
-  static token: string = '';
+  static token = '';
 
   static API_ENDPOINT: string;
 
